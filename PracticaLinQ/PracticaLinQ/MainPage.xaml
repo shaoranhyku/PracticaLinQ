@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PracticaLinQ"
+             x:Class="PracticaLinQ.MainPage">
+
+    <StackLayout Orientation="Vertical">
+
+        <StackLayout Orientation="Horizontal">
+
+            <Entry x:Name="txtName"
+               Text=""
+               Placeholder="Nombre"
+            />
+
+            <Entry x:Name="txtAge"
+               Text=""
+               Placeholder="Edad"
+            />
+
+            <Button x:Name="btnAdd"
+                Text="Añadir"
+            />
+
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+
+            <Entry x:Name="txtWhere"
+               Text=""
+               Placeholder="Filtro por nombre"
+            />
+
+            <Button x:Name="btnWhere"
+                Text="Where"
+            />
+
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+
+            <Entry x:Name="txtFirstOrDefault"
+               Text=""
+               Placeholder="Filtro por edad"
+            />
+
+            <Button x:Name="btnFirstOrDefault"
+                Text="FirstOrDefault"
+            />
+
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+
+            <Entry x:Name="txtSingleOrDefaultName"
+               Text=""
+               Placeholder="Filtro por nombre"
+            />
+
+            <Entry x:Name="txtSingleOrDefaultAge"
+               Text=""
+               Placeholder="Edad"
+            />
+
+            <Button x:Name="btnSingleOrDefault"
+                Text="SingleOrDefault"
+            />
+
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+
+            <Entry x:Name="txtLastOrDefault"
+               Text=""
+               Placeholder="Filtro por edad"
+            />
+
+            <Button x:Name="btnLastOrDefault"
+                Text="LastOrDefault"
+            />
+
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+
+            <Button x:Name="btnOrderBy"
+                Text="OrderBy"
+            />
+
+            <Button x:Name="btnOrderByDesc"
+                Text="OrderBy Descendente"
+            />
+
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+
+            <Entry x:Name="txtSkipWhile"
+               Text=""
+               Placeholder="Mayor que edad"
+            />
+
+            <Button x:Name="btnSkipWhile"
+                Text="SkipWhile"
+            />
+
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+
+            <Entry x:Name="txtTakeWhile"
+               Text=""
+               Placeholder="Mayor que edad"
+            />
+
+            <Button x:Name="btnTakeWhile"
+                Text="TakeWhile"
+            />
+
+        </StackLayout>
+
+        <ListView x:Name="lstPeople" />
+
+    </StackLayout>
+
+</ContentPage>
