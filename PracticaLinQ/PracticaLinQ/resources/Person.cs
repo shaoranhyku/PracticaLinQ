@@ -1,6 +1,6 @@
 ﻿namespace PracticaLinQ.resources
 {
-    class Person
+    public class Person
     {
         //Campos
         private string nombre, edad;

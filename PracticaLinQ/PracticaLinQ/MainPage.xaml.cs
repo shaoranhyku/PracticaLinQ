@@ -2,9 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using Xamarin.Forms;
 
 namespace PracticaLinQ
@@ -18,6 +21,8 @@ namespace PracticaLinQ
         {
             InitializeComponent();
 
+            datos = LeerArchivoXML("PracticaLinQ.data.alumnos.xml");
+
             lstPeople.ItemsSource = datos;
 
             btnAdd.Clicked += BtnAdd_Clicked;
@@ -29,6 +34,29 @@ namespace PracticaLinQ
             btnOrderByDesc.Clicked += BtnOrderByDesc_Clicked;
             btnSkipWhile.Clicked += BtnSkipWhile_Clicked;
             btnTakeWhile.Clicked += BtnTakeWhile_Clicked;
+        }
+
+        /// <summary>
+        /// Permite leer un archivo XML a partir de una ruta recibida.
+        /// </summary>
+        /// <param name="ruta">Ruta donde se encuentra el archivo XML</param>
+        /// <returns>Lista de contactos creados a partir del archivo</returns>
+        public ObservableCollection<Person> LeerArchivoXML(String ruta)
+        {
+
+            ObservableCollection<Person> arrText = new ObservableCollection<Person>();
+
+            var assembly = typeof(MainPage).GetTypeInfo().Assembly;
+            Stream stream = assembly.GetManifestResourceStream(ruta);
+            StreamReader objReader = new StreamReader(stream);
+            var doc = XDocument.Load(stream);
+
+            foreach (XElement element in doc.Root.Elements())
+            {
+                arrText.Add(new Person(element.Element("NOMBRE").Value, element.Element("EDAD").Value));
+            }
+
+            return arrText;
         }
 
         /// <summary>
